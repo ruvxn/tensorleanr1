@@ -37,3 +37,26 @@ model.compile(optimizer=tf.keras.optimizers.Adam(learning_rate=1.0),loss='mean_s
 
 epochs_hist = model.fit(x_train, y_train, epochs=100)
 
+#Evaluate Model
+epochs_hist.history.keys()
+
+plt.plot(epochs_hist.history['loss'])
+plt.title('Model Loss Progress During Training')
+plt.xlabel('Epochs')
+plt.ylabel('Training Loss')
+plt.legend(['Training Loss'])
+
+
+model.get_weights()#this returns the value thats almost equal to (9/5)
+
+
+Temp_C = np.array([-32])  # Convert to a NumPy array
+Temp_F = model.predict(Temp_C)
+
+print("Temperature in Fahrenheit using trained ANN: ", Temp_F)
+
+
+
+
+
+
